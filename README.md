@@ -1,6 +1,6 @@
 # Projeto CBF — Teste exploratório
 
-**Status: preparação da sessão de testes.**
+**Status: sessão exploratória em andamento.**
 
 Este repositório registra o trabalho de QA de Andeil Abreu na plataforma de
 observação de jogadores usada pelos observadores técnicos das seleções
@@ -42,6 +42,7 @@ que falha e o que está indefinido.
 - [x] Registrar o ticket e os limites do teste.
 - [ ] Conectar a conta GitHub à documentação do projeto.
 - [ ] Ler as regras de negócio disponíveis.
-- [ ] Acessar a plataforma e executar a sessão exploratória.
+- [x] Confirmar o acesso à plataforma.
+- [ ] Percorrer os menus no navegador sem editar dados existentes.
 - [ ] Registrar evidências, dúvidas e bugs.
 - [ ] Revisar o relatório da sessão.

@@ -1,0 +1,7 @@
+# Credenciais e arquivos locais
+.env
+*.env
+credenciais*
+senhas*
+secrets*
+.DS_Store

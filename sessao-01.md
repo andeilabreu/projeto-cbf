@@ -6,7 +6,7 @@
 - **Ambiente:** produção — https://cbf.lupafut.com/
 - **Data:** 22 e 28 de outubro de 2026
 - **Duração:** em andamento
-- **Status:** iniciada — menus iniciais observados
+- **Status:** em andamento — análise de teste finalizada com destaque em rascunho
 
 ## Preparação
 
@@ -101,8 +101,10 @@ Antes do login, a interface já revela estas áreas futuras:
 
 - **Ação:** Andeil informou que adicionou um destaque e clicou em
   **Finalizar análise**.
-- **Resultado obtido:** a confirmação visual da análise concluída ainda não
-  apareceu no print seguinte. O print enviado mostra outra tela.
+- **Resultado obtido:** a confirmação visual da análise concluída não
+  apareceu no print daquele momento. O print seguinte mostrou outra tela.
+  A tela atual, descrita no item 11, confirma que a análise ficou
+  **Finalizada**.
 
 ### 8. Tela Novo atleta ao adicionar destaque
 
@@ -132,8 +134,12 @@ Antes do login, a interface já revela estas áreas futuras:
 - Após trocar o nascimento para `2010`, o botão foi habilitado. O clique em
   **Cadastrar** exibiu: “Não foi possível cadastrar o atleta. Tente
   novamente.” Registrado como **BUG-002**.
-- Depois o nome foi alterado para `[TESTE] Atleta Base 01` e o cadastro
-  passou.
+- Depois o nome foi alterado para `[TESTE] Atleta Base 01` e o fluxo avançou
+  para a tela de posição.
+- Na busca de atleta, `[TESTE] Atleta Base 01` não apareceu. Andeil também
+  não encontrou o nome na conferência de registros da busca. O mesmo atleta
+  aparece depois como destaque desta análise. O BUG-003 permanece: o nome
+  não foi encontrado na busca, embora exista no destaque.
 
 ### 9. Tela Adicionar destaque · Posição
 
@@ -153,6 +159,43 @@ Antes do login, a interface já revela estas áreas futuras:
   menu Observar não está visível neste print; aparecem Gestão, Painéis,
   Configurações e Perfil.
 
+### 10. Novo formulário de atleta com botão desabilitado
+
+- **Evidência:** print `evidencias/tela-novo-atleta-botao-desabilitado.png`.
+- **Tela:** Adicionar destaque · Atleta · Novo atleta.
+- **Campos visíveis:**
+  - Nome: `TESTES`;
+  - Ano de nascimento: `2008`;
+  - Perna dominante: Ambidestro;
+  - Posição natural: vazia (`Buscar posição`);
+  - Clube: duas opções `TESTES`, a primeira selecionada;
+  - botão **Cadastrar** claro, aparentemente desabilitado.
+- **Observado:** o botão volta a ficar desabilitado quando a posição natural
+  não está preenchida, de novo sem mensagem clara. Isso reforça o BUG-001.
+
+### 11. Análise finalizada com destaque em rascunho
+
+- **Evidência:** print `evidencias/tela-analise-finalizada-destaque-rascunho.png`.
+- **Tela:** análise `TESTES × TESTES`.
+- **Observado na tela:**
+  - status da análise: **Finalizada**;
+  - data: `TESTES · 31/10/2026`;
+  - modo: In loco;
+  - botão **Adicionar destaque** ainda visível;
+  - um destaque: `[TESTE] Atleta Base 01`;
+  - posição do destaque: Zagueiro;
+  - clube: TESTES;
+  - quantidade de avaliações: `0 avaliações`;
+  - status do destaque: **Rascunho**.
+- **Fato:** o atleta de teste existe neste destaque. O cadastro não se
+  perdeu por completo.
+- **Fato:** a busca de atleta, feita antes, não encontrou esse nome.
+- Registrado como **BUG-003** (nome não aparece na busca) e **BUG-004**
+  (análise finalizada com destaque em rascunho e sem avaliações).
+- **Confirmação de Andeil:** a análise aparece como **Finalizada**.
+- **Limite do ticket:** esta análise já está finalizada. Não clicar em
+  **Adicionar destaque** nem alterar o rascunho.
+
 ## Observações
 
 - A documentação em `thatix-io/cbf-scouting-mvp-metaspecs` ainda não pôde ser
@@ -167,6 +210,7 @@ Antes do login, a interface já revela estas áreas futuras:
 
 ## Resultado da sessão
 
-Em andamento. O atleta `[TESTE] Atleta Base 01` foi criado. A tela atual é a
-escolha de posição do destaque. Próximo passo: selecionar **Goleiro
-(posição natural)**.
+Em andamento. A análise `TESTES × TESTES` está **Finalizada**. O atleta
+`[TESTE] Atleta Base 01` aparece nela como destaque em **Rascunho**, com
+`0 avaliações`. A busca de atleta, porém, não encontrou esse nome.
+Registrados **BUG-003** e **BUG-004**.

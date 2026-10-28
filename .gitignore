@@ -5,3 +5,6 @@ credenciais*
 senhas*
 secrets*
 .DS_Store
+
+# Planilhas originais com evidência embutida; o print extraído pode ser versionado
+*.ods

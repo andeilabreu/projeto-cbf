@@ -118,6 +118,12 @@ A busca não encontrou `[TESTE] Atleta Base 01`. O mesmo nome aparece na
 análise `TESTES × TESTES` como destaque em rascunho, posição Zagueiro,
 clube TESTES.
 
+### Reteste em 30/10/2026
+
+Na análise nova `teste A x teste B`, Andeil buscou novamente o nome exato
+`[TESTE] Atleta Base 01` e o sistema também não encontrou o atleta. O bug
+permanece **Aberto**.
+
 ## BUG-004 — Análise pode ser finalizada com destaque em rascunho
 
 - **Origem:** encontrado na sessão exploratória.

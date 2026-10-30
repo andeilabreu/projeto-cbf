@@ -196,10 +196,45 @@ Antes do login, a interface já revela estas áreas futuras:
 - **Limite do ticket:** esta análise já está finalizada. Não clicar em
   **Adicionar destaque** nem alterar o rascunho.
 
+### 12. Lista de Observações com nova análise em andamento
+
+- **Data:** 30 de outubro de 2026.
+- **Evidência:** `evidencias/tela-observacoes-analise-em-andamento.png`.
+- **Tela:** Observações · aba **Análises em andamento**.
+- **Resultado obtido:** existe uma análise nova:
+  - título: `teste A x teste B`;
+  - status: **Em andamento**;
+  - descrição: `teste`;
+  - data: `31/10/2026`;
+  - destaques: `0 destaques`;
+  - modo: **Vídeo**.
+- **Observado:** o prefixo `[TESTE]` não foi usado neste título. O registro
+  parece novo e ainda sem destaques. Próximo passo: abrir essa análise,
+  adicionar destaque e buscar `[TESTE] Atleta Base 01`.
+
+### 13. Busca de atleta com o termo “teste”
+
+- **Evidência:** `evidencias/tela-buscar-atleta-teste.png`.
+- **Tela:** Adicionar destaque · Atleta · aba **Buscar atleta**.
+- **Ação:** buscar por nome com o texto `teste`.
+- **Resultado obtido:** “Nenhum atleta encontrado. Cadastre um novo.”
+
+### 14. Reteste da busca por `[TESTE] Atleta Base 01`
+
+- **Tela:** Adicionar destaque · Atleta · aba **Buscar atleta**, dentro da
+  análise `teste A x teste B`.
+- **Ação:** buscar pelo nome exato `[TESTE] Atleta Base 01`.
+- **Resultado obtido (confirmado por Andeil):** nenhum atleta encontrado.
+- **Observado:** o mesmo nome aparece como destaque em rascunho na análise
+  finalizada `TESTES × TESTES`. Isso reforça o **BUG-003**.
+- **Limite:** não selecionar atleta de outra pessoa.
+
 ## Observações
 
-- A documentação em `thatix-io/cbf-scouting-mvp-metaspecs` ainda não pôde ser
-  lida por esta conta GitHub.
+- Em 29/10/2026 a conta `andeilabreu` autenticou no GitHub com sucesso, mas o
+  repositório `thatix-io/cbf-scouting-mvp-metaspecs` ainda retornou 404
+  (sem permissão). A leitura das regras de negócio continua bloqueada até a
+  liberação no ticket.
 - Nenhum clube, atleta, avaliação ou usuário existente foi editado.
 
 ## Dúvidas
@@ -212,5 +247,6 @@ Antes do login, a interface já revela estas áreas futuras:
 
 Em andamento. A análise `TESTES × TESTES` está **Finalizada**. O atleta
 `[TESTE] Atleta Base 01` aparece nela como destaque em **Rascunho**, com
-`0 avaliações`. A busca de atleta, porém, não encontrou esse nome.
-Registrados **BUG-003** e **BUG-004**.
+`0 avaliações`. Em 30/10/2026, na análise `teste A x teste B`, a busca pelo
+nome exato também não encontrou o atleta. **BUG-003** reforçado. **BUG-004**
+permanece aberto.

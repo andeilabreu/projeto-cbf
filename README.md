@@ -25,8 +25,9 @@ que falha e o que está indefinido.
 - Plataforma: https://cbf.lupafut.com/
 - Documentação de regras de negócio e técnica:
   https://github.com/thatix-io/cbf-scouting-mvp-metaspecs
-- Acesso à documentação: ainda não confirmado nesta conta GitHub. A conexão
-  da conta precisa ser verificada.
+- Acesso à documentação: a conta `andeilabreu` está autenticada no GitHub, mas
+  o repositório `thatix-io/cbf-scouting-mvp-metaspecs` ainda retorna sem
+  permissão (404). A liberação de acesso precisa ser pedida no ticket.
 
 ## Documentos
 
@@ -40,7 +41,8 @@ que falha e o que está indefinido.
 ## Etapas
 
 - [x] Registrar o ticket e os limites do teste.
-- [ ] Conectar a conta GitHub à documentação do projeto.
+- [x] Autenticar a conta GitHub (`andeilabreu`).
+- [ ] Obter liberação de acesso à documentação do projeto.
 - [ ] Ler as regras de negócio disponíveis.
 - [x] Confirmar o acesso à plataforma.
 - [ ] Percorrer os menus no navegador sem editar dados existentes.

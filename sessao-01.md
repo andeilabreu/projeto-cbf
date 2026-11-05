@@ -339,6 +339,18 @@ Antes do login, a interface já revela estas áreas futuras:
   fechamento.
 - **Próximo passo:** confirmar no botão vermelho **Finalizar análise**.
 
+### 23. Análise teste A x teste B finalizada
+
+- **Evidência:** `evidencias/tela-observacoes-analises-finalizadas.png`.
+- **Tela:** Observações · aba **Análises finalizadas**.
+- **Resultado obtido:** o card `teste A x teste B` aparece com status
+  **Finalizada**, data `31/10/2026`, `1 destaque` e modo **Vídeo**.
+- **Observado:** a análise antiga `TESTES x TESTES` também aparece como
+  **Finalizada**, com `1 destaque` e modo **In loco**. Há outras partidas
+  reais na lista; o ticket proíbe editá-las — apenas observação visual.
+- **Conclusão deste fluxo:** com destaque **Final** e avaliações preenchidas,
+  a finalização da análise concluiu normalmente.
+
 ## Observações
 
 - Em 29/10/2026 a conta `andeilabreu` autenticou no GitHub com sucesso, mas o
@@ -355,8 +367,7 @@ Antes do login, a interface já revela estas áreas futuras:
 
 ## Resultado da sessão
 
-Em andamento. Em 05/11/2026, na análise `teste A x teste B`, o destaque
-`[TESTE] Atleta Base 02` foi concluído com status **Final**, **11
-avaliações**, posição Zagueiro e clube `teste B`. A análise permanece **Em
-andamento**. **BUG-003** e **BUG-004** continuam abertos na análise antiga
-`TESTES × TESTES`. ACH-005 registrado (busca vs. duplicidade).
+Em andamento. Em 05/11/2026, o destaque `[TESTE] Atleta Base 02` foi
+concluído (**Final**, 11 avaliações) e a análise `teste A x teste B` passou
+para **Finalizada**. **BUG-003**, **BUG-004** e **ACH-005** continuam
+registrados.

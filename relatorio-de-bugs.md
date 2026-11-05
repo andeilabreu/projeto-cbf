@@ -36,6 +36,15 @@ continuam em análise.
 - **Status:** relacionado ao BUG-004. O ticket pede para não editar
   avaliação já concluída; neste teste o botão não deve ser usado.
 
+### ACH-005 — Busca não encontra atleta que a duplicidade reconhece
+
+- **Tela:** Buscar atleta vs. Novo atleta (aviso de duplicados).
+- **Observado:** a busca por `[TESTE] Atleta Base 01` não encontrou o
+  atleta; no cadastro de novo atleta, o aviso **Possíveis atletas
+  duplicados** ofereceu **Usar [TESTE] Atleta Base 01 (2010)**.
+- **Evidência:** `evidencias/tela-possiveis-atletas-duplicados.png`.
+- **Status:** relacionado ao BUG-003.
+
 ## BUG-001 — Botão Cadastrar fica desabilitado sem mensagem
 
 - **Origem:** encontrado na sessão exploratória, conforme relato de Andeil.
@@ -123,6 +132,12 @@ clube TESTES.
 Na análise nova `teste A x teste B`, Andeil buscou novamente o nome exato
 `[TESTE] Atleta Base 01` e o sistema também não encontrou o atleta. O bug
 permanece **Aberto**.
+
+### Observação em 05/11/2026
+
+No fluxo **Novo atleta**, o aviso de possíveis duplicados ofereceu
+**Usar [TESTE] Atleta Base 01 (2010)**. Ou seja: o atleta existe e é
+reconhecido na duplicidade, mas continua falhando na busca. Ver ACH-005.
 
 ## BUG-004 — Análise pode ser finalizada com destaque em rascunho
 

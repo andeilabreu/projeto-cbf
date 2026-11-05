@@ -229,6 +229,116 @@ Antes do login, a interface já revela estas áreas futuras:
   finalizada `TESTES × TESTES`. Isso reforça o **BUG-003**.
 - **Limite:** não selecionar atleta de outra pessoa.
 
+### 15. Aviso de possíveis atletas duplicados
+
+- **Data:** 5 de novembro de 2026.
+- **Evidência:** `evidencias/tela-possiveis-atletas-duplicados.png`.
+- **Tela:** Adicionar destaque · Atleta · Novo atleta, na análise
+  `teste A x teste B`.
+- **Campos observados:**
+  - Ano de nascimento: `2010`;
+  - Perna dominante: Esquerda;
+  - Posição natural: Zagueiro;
+  - Clube selecionado: `teste B` (também aparece `teste A`);
+  - botão: **É um novo atleta — cadastrar**.
+- **Resultado obtido:** aviso amarelo **Possíveis atletas duplicados**, com a
+  opção **Usar [TESTE] Atleta Base 01 (2010)**.
+- **Observado:** o sistema reconheceu `[TESTE] Atleta Base 01` neste aviso,
+  embora a busca por nome (item 14) não o tenha encontrado. Isso reforça o
+  BUG-003 e registra inconsistência entre busca e detecção de duplicidade.
+
+### 16. Cadastro de novo atleta avançou para escolha de posição
+
+- **Evidência:** `evidencias/tela-adicionar-destaque-posicao-02.png` e
+  `evidencias/tela-adicionar-destaque-posicao-02-lista.png`.
+- **Ação:** Andeil clicou em **É um novo atleta — cadastrar**.
+- **Resultado obtido:** a tela **Adicionar destaque · Posição** foi aberta.
+- **Observado:**
+  - a primeira opção aparece como **Zagueiro (posição natural)** — 11
+    características;
+  - outras posições listadas: Goleiro, Lateral direito, Lateral esquerdo,
+    Volante, Volante 8, Meia, Atacante de lado, Centroavante;
+  - o fluxo de cadastro avançou sem a mensagem genérica do BUG-002.
+- **Próximo passo:** selecionar **Zagueiro (posição natural)** e seguir a
+  avaliação do destaque.
+
+### 17. Tela de avaliação do destaque (Passo 1 de 4)
+
+- **Evidência:** `evidencias/tela-editar-observacao-passo1.png` e
+  `evidencias/tela-editar-observacao-passo1-proximo.png`.
+- **Tela:** Editar observação · **Passo 1 de 4: Avaliar**.
+- **URL observada:** `/observacoes/...`
+- **Resultado obtido:** formulário de características do zagueiro, com opções
+  Ruim, Regular, Bom, Muito bom, Excelente e Não observado.
+- **Observado:**
+  - características visíveis incluem 1x1 Defensivo, Antecipação, Cabeceio
+    Defensivo, Capacidade de Construção, Impulsão, Comunicação e entendimento
+    de jogo, Cabeceio Ofensivo, Passe, linha alta/baixa, Velocidade/Aceleração
+    e Força;
+  - em pelo menos um item (**Cabeceio Ofensivo**) a opção **Bom** estava
+    marcada;
+  - no fim da tela aparecem **Anterior** e o botão azul **Próximo**.
+- **Próximo passo:** marcar as demais características e clicar em **Próximo**.
+
+### 18. Passo 2 de 4 — Classificar
+
+- **Evidência:** `evidencias/tela-editar-observacao-passo2-classificar.png`.
+- **Tela:** Editar observação · **Passo 2 de 4: Classificar**.
+- **Resultado obtido:** lista de classificação de **1** a **5**, com botões
+  **Anterior** e **Próximo**.
+- **Observado:** o subtítulo mostra **Clube: —**, embora no cadastro do atleta
+  o clube `teste B` tivesse sido selecionado. Isso fica como dúvida/achado.
+- **Próximo passo:** escolher uma nota (1 a 5) e clicar em **Próximo**.
+
+### 19. Passo 3 de 4 — Relato
+
+- **Evidência:** `evidencias/tela-editar-observacao-passo3-relato.png`.
+- **Tela:** Editar observação · **Passo 3 de 4: Relato**.
+- **Resultado obtido:** a tela informa que a IA pode redigir o relato e que
+  **o relato é opcional para finalizar**. Existe o botão
+  **Iniciar relato com IA**, além de **Anterior** e **Próximo**.
+- **Próximo passo sugerido para o teste:** clicar em **Próximo** sem usar a
+  IA nesta etapa, para concluir o fluxo mínimo.
+
+### 20. Passo 4 de 4 — Finalizar
+
+- **Evidência:** `evidencias/tela-editar-observacao-passo4-finalizar.png`.
+- **Tela:** Editar observação · **Passo 4 de 4: Finalizar**.
+- **Checklist observado:**
+  - Ao menos uma característica avaliada — marcado;
+  - Classificação definida — marcado;
+  - Relato (opcional) — não marcado.
+- **Resultado obtido:** o botão **Finalizar observação** está disponível.
+- **Observado:** o subtítulo continua **Clube: —**.
+- **Próximo passo:** clicar em **Finalizar observação** e registrar a tela
+  seguinte.
+
+### 21. Destaque finalizado com sucesso
+
+- **Evidência:** `evidencias/tela-analise-destaque-final-base-02.png`.
+- **Tela:** análise `teste A x teste B`.
+- **Resultado obtido:**
+  - status da análise: **Em andamento**;
+  - destaque: `[TESTE] Atleta Base 02`;
+  - posição/clube: **Zagueiro · teste B**;
+  - quantidade: **11 avaliações**;
+  - status do destaque: **Final**.
+- **Observado:** o fluxo completo de novo atleta + avaliação + finalização da
+  observação funcionou. Diferente do BUG-004, aqui o destaque saiu de
+  rascunho e ficou **Final** com avaliações preenchidas. O clube `teste B`
+  aparece no destaque, mesmo tendo aparecido **Clube: —** durante a edição.
+
+### 22. Confirmação para finalizar a análise
+
+- **Evidência:** `evidencias/tela-confirmar-finalizar-analise.png`.
+- **Ação:** Andeil clicou em **Finalizar análise**.
+- **Resultado obtido:** modal **Finalizar análise?** com o aviso:
+  “Ao finalizar, a partida fica consolidada e não poderá mais ser editada.”
+- **Observado:** o destaque `[TESTE] Atleta Base 02` continua **Final**, com
+  11 avaliações. Diferente do BUG-004, aqui há avaliação concluída antes do
+  fechamento.
+- **Próximo passo:** confirmar no botão vermelho **Finalizar análise**.
+
 ## Observações
 
 - Em 29/10/2026 a conta `andeilabreu` autenticou no GitHub com sucesso, mas o
@@ -245,8 +355,8 @@ Antes do login, a interface já revela estas áreas futuras:
 
 ## Resultado da sessão
 
-Em andamento. A análise `TESTES × TESTES` está **Finalizada**. O atleta
-`[TESTE] Atleta Base 01` aparece nela como destaque em **Rascunho**, com
-`0 avaliações`. Em 30/10/2026, na análise `teste A x teste B`, a busca pelo
-nome exato também não encontrou o atleta. **BUG-003** reforçado. **BUG-004**
-permanece aberto.
+Em andamento. Em 05/11/2026, na análise `teste A x teste B`, o destaque
+`[TESTE] Atleta Base 02` foi concluído com status **Final**, **11
+avaliações**, posição Zagueiro e clube `teste B`. A análise permanece **Em
+andamento**. **BUG-003** e **BUG-004** continuam abertos na análise antiga
+`TESTES × TESTES`. ACH-005 registrado (busca vs. duplicidade).

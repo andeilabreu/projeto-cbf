@@ -1,6 +1,6 @@
 # Projeto CBF — Teste exploratório
 
-**Status: sessão exploratória em andamento.**
+**Status: sessão 01 revisada e encerrada; bugs abertos no Jira.**
 
 Este repositório registra o trabalho de QA de Andeil Abreu na plataforma de
 observação de jogadores usada pelos observadores técnicos das seleções
@@ -48,5 +48,6 @@ que falha e o que está indefinido.
 - [x] Percorrer o menu Gestão (Central de Gestão) sem editar dados.
 - [x] Percorrer o menu Painéis (abas Processo e Jogadores) sem editar dados.
 - [ ] Percorrer Configurações e Perfil sem editar dados existentes.
-- [ ] Registrar evidências, dúvidas e bugs.
-- [ ] Revisar o relatório da sessão.
+- [x] Registrar evidências, dúvidas e bugs (AN-4 a AN-7 no Jira).
+- [x] Revisar o relatório da sessão 01.
+- [ ] Iniciar sessão 02 após retorno dos bugs ou nova prioridade do ticket.

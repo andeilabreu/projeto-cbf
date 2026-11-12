@@ -4,9 +4,9 @@
 
 - **QA:** Andeil Abreu
 - **Ambiente:** produção — https://cbf.lupafut.com/
-- **Data:** 22 e 28 de outubro de 2026
-- **Duração:** em andamento
-- **Status:** em andamento — análise de teste finalizada com destaque em rascunho
+- **Data:** 22 e 28 de outubro; 5 e 12 de novembro de 2026
+- **Duração:** sessão 01 encerrada nesta revisão
+- **Status:** revisada e encerrada — pendências abertas listadas no resultado
 
 ## Preparação
 
@@ -467,7 +467,32 @@ Antes do login, a interface já revela estas áreas futuras:
 
 ## Resultado da sessão
 
-Em andamento. Em 05/11/2026, o destaque `[TESTE] Atleta Base 02` foi
-concluído (**Final**, 11 avaliações) e a análise `teste A x teste B` passou
-para **Finalizada**. **BUG-003**, **BUG-004** e **ACH-005** continuam
-registrados.
+**Sessão 01 revisada e encerrada em 12/11/2026.**
+
+### O que funcionou
+- Login e navegação nos menus Observar, Gestão e Painéis.
+- Criação de análise e destaque com `[TESTE] Atleta Base 02`.
+- Fluxo completo de observação (avaliar, classificar, relato opcional,
+  finalizar) até destaque **Final** com 11 avaliações.
+- Finalização da análise `teste A x teste B`.
+- Busca em Gestão encontra `[TESTE] Atleta Base 02`.
+
+### Bugs abertos (também no Jira)
+- **BUG-001** → AN-4 — botão Cadastrar sem mensagem.
+- **BUG-002** → AN-5 — falha genérica no cadastro.
+- **BUG-003** → AN-6 — Base 01 não aparece na busca (reforçado em Gestão;
+  comentário atualizado em 12/11).
+- **BUG-004** → AN-7 — análise finalizada com destaque em rascunho.
+
+### Achados em análise
+- ACH-001 a ACH-005 (ligados aos bugs acima).
+
+### Pendências para próxima sessão
+- Liberar/ler documentação `cbf-scouting-mvp-metaspecs`.
+- Observar Configurações e Perfil sem editar.
+- Acompanhar correção dos bugs no Jira (AN-4 a AN-7).
+
+### Escopo respeitado
+Nenhum usuário, clube, atleta ou avaliação existente foi editado. Dados de
+teste usaram prefixo `[TESTE]` (com desvio pontual `TESTES` / `teste` no
+início da sessão).

@@ -2,8 +2,9 @@
 
 ## Situação atual
 
-Quatro bugs foram registrados na sessão exploratória. Os achados anteriores
-continuam em análise.
+Quatro bugs foram registrados na sessão exploratória e abertos no Jira
+(AN-4 a AN-7). Os achados relacionados continuam em análise. A sessão 01 foi
+revisada e encerrada em 12/11/2026; os bugs permanecem abertos até correção.
 
 ## Achados em análise
 

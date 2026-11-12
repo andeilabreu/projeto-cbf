@@ -45,6 +45,8 @@ que falha e o que está indefinido.
 - [ ] Obter liberação de acesso à documentação do projeto.
 - [ ] Ler as regras de negócio disponíveis.
 - [x] Confirmar o acesso à plataforma.
-- [ ] Percorrer os menus no navegador sem editar dados existentes.
+- [x] Percorrer o menu Gestão (Central de Gestão) sem editar dados.
+- [x] Percorrer o menu Painéis (abas Processo e Jogadores) sem editar dados.
+- [ ] Percorrer Configurações e Perfil sem editar dados existentes.
 - [ ] Registrar evidências, dúvidas e bugs.
 - [ ] Revisar o relatório da sessão.

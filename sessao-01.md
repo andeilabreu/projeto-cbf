@@ -351,6 +351,106 @@ Antes do login, a interface já revela estas áreas futuras:
 - **Conclusão deste fluxo:** com destaque **Final** e avaliações preenchidas,
   a finalização da análise concluiu normalmente.
 
+### 24. Menu Gestão — Central de Gestão
+
+- **Data:** 12 de novembro de 2026.
+- **Evidência:** `evidencias/tela-central-de-gestao.png`.
+- **Tela:** Central de Gestão (`/gestao`).
+- **Resultado obtido:** panorama com filtros e totais.
+- **Observado:**
+  - subtítulo: “Panorama de observações, atletas e destaques. Clique num
+    número para ver a lista.”;
+  - card **Diagrama Tático** com link **Montar escalação**;
+  - filtros: Posição, Categoria, Clube, Competição (todos em “Todas/Todos”);
+  - totais exibidos: **203** partidas observadas, **221** atletas únicos,
+    **277** observações, **275** destaques, **13** atletas com 3+ destaques;
+  - cada total tem link **Ver lista**.
+- **Limite:** nesta etapa só observação. Não editar listas nem montar
+  escalação ainda.
+
+### 25. Gestão — lista Partidas observadas
+
+- **Evidência:** `evidencias/tela-gestao-partidas-observadas.png`.
+- **Tela:** Partidas (`/gestao/partidas?observed=true&page=1`).
+- **Resultado obtido:** grade de cards com status **Finalizada**.
+- **Observado:**
+  - a análise de teste `teste A x teste B` aparece na lista (1 destaque,
+    Vídeo);
+  - há várias partidas reais (Flamengo, Corinthians, etc.);
+  - cada card mostra data, quantidade de destaques e modo (Vídeo / In loco /
+    Não informado).
+- **Limite:** não abrir para editar partidas reais. Se for abrir um card,
+  preferir apenas `teste A x teste B` ou `TESTES x TESTES`.
+
+### 26. Gestão — lista Atletas únicos
+
+- **Evidência:** `evidencias/tela-gestao-atletas-unicos.png`.
+- **Tela:** Atletas (`/atletas?observed=true&page=1`).
+- **Resultado obtido:** lista de atletas com busca por nome e cards
+  (nome, ano, posição).
+- **Observado:** a página lista atletas reais observados. Existe campo
+  **Buscar por nome** e botão **Buscar**. Link **← Gestão** no topo.
+- **Limite:** não clicar em atletas reais. Próximo passo seguro: buscar
+  `[TESTE] Atleta Base 01` e `[TESTE] Atleta Base 02` neste campo.
+
+### 27. Busca em Gestão por `[TESTE] Atleta Base 02`
+
+- **Evidência:** `evidencias/tela-gestao-busca-atleta-base-02.png`.
+- **Tela:** Atletas · Buscar por nome.
+- **Ação:** buscar `[TESTE] Atleta Base 02`.
+- **Resultado obtido:** o atleta foi encontrado.
+- **Observado:** card com `[TESTE] Atleta Base 02`, `2010 · Zagueiro`.
+  Nesta tela de Gestão a busca funcionou para o Base 02. Ainda falta
+  testar o Base 01 na mesma tela (comparar com o BUG-003).
+
+### 28. Busca em Gestão por `[TESTE] Atleta Base 01`
+
+- **Evidência:** `evidencias/tela-gestao-busca-atleta-base-01.png`.
+- **Tela:** Atletas · Buscar por nome.
+- **Ação:** buscar `[TESTE] Atleta Base 01`.
+- **Resultado obtido:** “Nenhum atleta encontrado.”
+- **Observado:**
+  - Base 02 aparece nesta mesma busca de Gestão;
+  - Base 01 não aparece aqui nem em Buscar atleta (BUG-003);
+  - Base 01 foi reconhecido no aviso de duplicados (ACH-005) e existe no
+    destaque da análise `TESTES × TESTES`.
+- **Conclusão parcial:** o problema do Base 01 não é só da tela de destaque;
+  a busca de Gestão também não o encontra.
+
+### 29. Menu Painéis — aba Processo
+
+- **Evidência:** `evidencias/tela-paineis-processo.png`.
+- **Tela:** Painéis (`/paineis` ou equivalente).
+- **Resultado obtido:** painel de análise visual do processo de observação.
+- **Observado:**
+  - filtros: Posição, Categoria, Clube, Competição, Status, Observador,
+    período de/até;
+  - abas: Processo (ativa), Analistas, Jogadores, Clubes e competições;
+  - cards com totais: **203** partidas, **277** observações, **275**
+    destaques, com gráficos;
+  - alternância Semana/Mês (Mês selecionado);
+  - seção “Cobertura: competição x categoria” parcialmente visível.
+- **Limite:** só observação. Não alterar filtros reais nem editar dados.
+
+### 30. Painéis — aba Jogadores
+
+- **Evidência:**
+  - `evidencias/tela-paineis-jogadores-topo.png`
+  - `evidencias/tela-paineis-jogadores-status.png`
+  - `evidencias/tela-paineis-jogadores-recorrencia.png`
+- **Tela:** Painéis · Jogadores (`/paineis/jogadores`).
+- **Resultado obtido:** painel de atletas com totais e gráficos.
+- **Observado:**
+  - totais: **221** atletas observados, **13** com 3+ destaques;
+  - gráfico **Atletas por status**: Radar (~92), Selecionável (~48), Já
+    convocado (~77), Sem status (~2);
+  - aviso: “Recorrência não é qualidade...”;
+  - gráfico **Recorrência de destaques**: muitos com 1 destaque, menos com 2
+    e 3+; link “2 atletas observados sem destaque”;
+  - seções seguintes: Atletas por posição observada e Atletas por categoria;
+  - opções “Ver como tabela” nos gráficos.
+- **Limite:** não clicar em listas que abram edição de atletas reais.
+
 ## Observações
 
 - Em 29/10/2026 a conta `andeilabreu` autenticou no GitHub com sucesso, mas o

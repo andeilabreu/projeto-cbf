@@ -139,6 +139,15 @@ No fluxo **Novo atleta**, o aviso de possíveis duplicados ofereceu
 **Usar [TESTE] Atleta Base 01 (2010)**. Ou seja: o atleta existe e é
 reconhecido na duplicidade, mas continua falhando na busca. Ver ACH-005.
 
+### Reteste em Gestão — 12/11/2026
+
+Na tela **Gestão > Atletas**:
+- busca por `[TESTE] Atleta Base 02` → encontrado (`2010 · Zagueiro`);
+- busca por `[TESTE] Atleta Base 01` → “Nenhum atleta encontrado.”
+
+Evidências: `tela-gestao-busca-atleta-base-02.png` e
+`tela-gestao-busca-atleta-base-01.png`. O BUG-003 permanece **Aberto**.
+
 ## BUG-004 — Análise pode ser finalizada com destaque em rascunho
 
 - **Origem:** encontrado na sessão exploratória.
